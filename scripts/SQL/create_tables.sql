@@ -1,7 +1,16 @@
-CREATE TABLE IF NOT EXISTS public.category
+CREATE TABLE public.category
 (
-    id integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
-    label text COLLATE pg_catalog."default" NOT NULL,
-    route text COLLATE pg_catalog."default" NOT NULL,
-    CONSTRAINT category_pkey PRIMARY KEY (id)
+    id integer NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    label text NOT NULL,
+    route text NOT NULL
+);
+
+CREATE TABLE public.post
+(
+    id integer NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    title text NOT NULL,
+    content text,
+    slug text NOT NULL,
+    excerpt text,
+    category_id integer NOT NULL REFERENCES category(id)
 );
