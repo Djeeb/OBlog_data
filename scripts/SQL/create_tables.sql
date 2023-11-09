@@ -1,3 +1,5 @@
+BEGIN;
+
 CREATE TABLE public.category
 (
     id integer NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -14,3 +16,5 @@ CREATE TABLE public.post
     excerpt text,
     category_id integer NOT NULL REFERENCES category(id)
 );
+
+END;

@@ -16,8 +16,12 @@ createdb oblog -O admin_oblog
 
 # Connexion en tant que admin_oblog
 export PGUSER=admin_oblog
+export PGPASSWORD=oblog
 # Connexion à la base de données
 export PGDATABASE=oblog
 
 # Exécuter le script de création des tables
 psql -f ./scripts/SQL/create_tables.sql
+
+# Exécuter le script d'import des données
+node ./scripts/JS/importData.js
