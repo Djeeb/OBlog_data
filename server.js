@@ -14,7 +14,7 @@ const {categoryRouter, postRouter} = require("./app/router");
 app.use('/categories', categoryRouter);
 app.use('/posts', postRouter);
 
-const PORT = process.env.PORT ?? 3000;
+const PORT = process.env.PORT ?? 4000;
 
 // je lance l'écoute de mon serveur
 app.listen(PORT,()=>{

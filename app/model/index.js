@@ -1,5 +1,5 @@
 const categoryDatamapper = require("./category");
-const postController = require("./post");
+const postDatamapper = require("./post");
 
 
 module.exports = {

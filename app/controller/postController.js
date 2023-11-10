@@ -32,7 +32,8 @@ const postController = {
     await postDatamapper.delete(req.params.id);
 
     res.json(true);
-  }
+  },
+  getAllPostsByCategory(){}
 };
 
 module.exports = postController;
