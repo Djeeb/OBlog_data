@@ -7,6 +7,9 @@ const express = require("express");
 
 const app = express();
 
+// Autorise la réception de données au format (Content-type) JSON
+app.use(express.json());
+
 // const routers = require("./app/router/index.js");
 const {categoryRouter, postRouter} = require("./app/router");
 

@@ -1,3 +1,12 @@
 ### Récupération de toutes les catégories
 
 GET http://localhost:4000/categories
+
+### Ajout d'une catégorie
+POST http://localhost:4000/categories
+Content-Type: application/json
+
+{
+    "route": "/toto",
+    "label": "Blagues de Toto"
+}
