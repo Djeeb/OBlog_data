@@ -18,7 +18,7 @@ const categoryController = {
       // Je récupère une catégorie par son id en BDD
       const categories = await categoryDatamapper.findById(req.params.id);
   
-      res.json(categories);
+      res.json(category);
   },
   async updateCategory(req,res){
     debug(req_body);
