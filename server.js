@@ -11,11 +11,8 @@ const app = express();
 app.use(express.json());
 
 // const routers = require("./app/router/index.js");
-const {categoryRouter, postRouter} = require("./app/router");
-
-// Utiliser une url dans le .use() permet de définir que l'url doit être préfixée par ce qui est passé en paramètre
-app.use('/categories', categoryRouter);
-app.use('/posts', postRouter);
+const router = require("./app/router");
+app.use(router);
 
 const PORT = process.env.PORT ?? 4000;
 
