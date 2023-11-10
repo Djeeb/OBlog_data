@@ -1,0 +1,3 @@
+### Récupération de toutes les catégories
+
+GET http://localhost:4000/categories
