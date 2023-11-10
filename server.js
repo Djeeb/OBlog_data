@@ -7,8 +7,12 @@ const express = require("express");
 
 const app = express();
 
-// autorise la réception de données au format (Content-type) JSON
-app.use(express.json());
+// const routers = require("./app/router/index.js");
+const {categoryRouter, postRouter} = require("./app/router");
+
+// Utiliser une url dans le .use() permet de définir que l'url doit être préfixée par ce qui est passé en paramètre
+app.use('/categories', categoryRouter);
+app.use('/posts', postRouter);
 
 const PORT = process.env.PORT ?? 3000;
 

@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "dev": "DEBUG=* node server.js",
+    "dev": "DEBUG=controller:category node server.js",
     "initDB": "bash scripts/init.sh"
   },
   "name": "correction_oblog",
