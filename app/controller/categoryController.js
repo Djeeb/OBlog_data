@@ -3,9 +3,16 @@ const debug = require('debug')('controller:category');
 
 const categoryController = {
   async getAllCategories(_,res){
-    const categories = await categoryDatamapper.findAll();
+    // Je récupère toutes les catégories en BDD
+    const {error,categories} = await categoryDatamapper.findAll();
 
-    res.json(categories);
+    if(error){
+      // Si j'ai une erreur, je la remonte
+      next(error);
+    } else {
+      // Sinon, je remonte les catégories
+      res.json(categories);
+    }
   },
   async addCategory(req,res){
     debug(req_body);
