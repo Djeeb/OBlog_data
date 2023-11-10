@@ -1,6 +1,5 @@
 // Fichier de connexion à la base de données
-const { Client } = require('pg');
-const client = new Client();
-client.connect();
+const { Pool } = require('pg');
+const pool = new Pool();
 
-module.exports = client;
+module.exports = pool;
